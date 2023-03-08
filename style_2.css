@@ -159,7 +159,7 @@ header {
   position: relative;
   top: 160px;
   left: 150px;
-  width: 460px;
+  width: auto;
   background-color: transparent;
   /* z-index: 2; */
 }
@@ -169,15 +169,15 @@ header {
   /* z-index: 2; */
   position: relative;
   display: inline-block;
-  width: 260px;
+  width: 210px;
 }
 
 .movingText::before {
   content: "";
   position: absolute;
   top: 0;
-  right: 20%;
-  width: 80%;
+  right: 0%;
+  width: 100%;
   height: 100%;
   /* width: 100%; */
   color: var(--foreGround-color);
@@ -197,9 +197,9 @@ header {
   40% {
     width: 60%;
   }
-  /* 0% {
+  0% {
     width: 100%;
-  } */
+  }
 }
 
 .image {
@@ -356,15 +356,15 @@ header {
   }
   .intro2 {
     font-size: 15px;
-    width: 270px;
+    width: auto;
     top: 240px;
   }
   .intro2 span {
-    width: 150px;
+    width: 140px;
   }
 
   .contacts button {
-    font-weight: 300;
+    font-weight: 600;
     border-radius: 20px;
     width: 90px;
     height: 35px;
@@ -388,12 +388,12 @@ header {
     width: 35px;
     bottom: 0px;
     font-size: 25px;
-    line-height: 33px;
+    text-align: center;
+    line-height: 32px;
     border-radius: 50%;
     margin-right: 2px;
-    /* position: absolute; */
-    /* transition: 2s; */
   }
+
   .secondary-image {
     display: inline;
     position: absolute;
