@@ -18,7 +18,10 @@
 }
 
 body {
-  /* overflow: hidden; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: var(--background-color);
 }
 
@@ -32,6 +35,15 @@ header {
   top: 0px;
   z-index: 5;
   background-color: var(--moving-color);
+}
+
+.fa-bars {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  position: absolute;
+  display: none;
+  cursor: pointer;
 }
 .navigationBar {
   /* position: absolute; */
@@ -113,6 +125,36 @@ header {
 .navigationBar ul li:hover {
   color: red;
   cursor: pointer;
+}
+
+.menu {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: -300px;
+  width: 300px;
+  text-align: center;
+  list-style: none;
+  font-size: 40px;
+  z-index: 5;
+  background-color: tomato;
+  /* border-radius: 30px; */
+  transition: 0.8;
+}
+.fa-xmark {
+  position: relative;
+  left: 130px;
+  cursor: pointer;
+}
+.menu li {
+  list-style-type: none;
+}
+
+.menu-visible {
+  display: inline-block;
+  right: 0px;
+  transition: 0.8s;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -328,13 +370,13 @@ header {
   .navigationBar {
     display: none;
   }
-
-  .movingText::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0%;
-    width: 100%;
+  .fa-bars {
+    display: inline-block;
+    right: 10px;
+    font-size: 20px;
+  }
+  #darkModeIcons {
+    margin-right: 40px;
   }
 }
 
@@ -389,7 +431,7 @@ header {
     bottom: 0px;
     font-size: 25px;
     text-align: center;
-    line-height: 32px;
+    line-height: 35px;
     border-radius: 50%;
     margin-right: 2px;
   }
