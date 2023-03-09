@@ -1,7 +1,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   box-sizing: border-box;
 }
 :root {
@@ -145,6 +145,7 @@ header {
 
 .menu-icons1,.menu-icons2{
   position: absolute;
+  display: none;
   right: 25px;
   top: 13px;
 
@@ -152,8 +153,8 @@ header {
 }
 .menu-icons2{
   display: none;
-  right: 0.5px;
-  width: 25px;
+  right: 8px;
+  width: 20px;
 }
 
 .menu-icons-hide{
@@ -166,6 +167,7 @@ header {
 
 .fa-bars {
   font-size: 30px;
+  display: none;
   font-weight: 1000;
   text-align: center;
   border: none;
@@ -200,7 +202,7 @@ header {
   padding: 5px;
   list-style-type: none;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   transition: 0.8s;
 }
 
