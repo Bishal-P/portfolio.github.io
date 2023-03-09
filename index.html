@@ -13,7 +13,12 @@
   </head>
   <body>
     <header>
-      <i class="fa-solid fa-bars" onclick="menuBar()"></i>
+      <div class="menu-icons1">
+        <i class="fa-solid fa-bars" onclick="menuBar()"></i>
+      </div>
+      <div class="menu-icons2">
+        <i class="fa-solid fa-xmark" onclick="disable_menuBar()"></i>
+      </div>
       <div class="logo"><span>𝕭</span>𝖎𝖘𝖍𝖆𝖑<span>.</span></div>
       <nav class="navigationBar">
         <ul>
@@ -28,7 +33,6 @@
     </header>
 
     <div class="menu">
-      <i class="fa-solid fa-xmark" onclick="disable_menuBar()"></i>
       <ul>
         <li>Home</li>
         <li>About</li>
@@ -93,7 +97,6 @@
 
     <!-- ----------------------------------------------------------------------------------- -->
 
-
     <!-- ------------------------------------------------------------- -->
     <script>
       var icon = document.getElementById("darkModeIcons");
@@ -106,6 +109,10 @@
         }
       };
 
+      // var Menu=document.getElementsByClassName("fa-xmark");
+      // Menu.onclick=function (){
+      //   document.body.classList.toggle("menu-visible");
+      // }
       const text = document.querySelector(".movingText");
       const textLoad = () => {
         setTimeout(() => {
@@ -123,9 +130,17 @@
 
       function menuBar() {
         document.querySelector(".menu").classList.add("menu-visible");
+        document
+          .querySelector(".menu-icons2")
+          .classList.add("menu-icons-visible");
+        document.querySelector(".menu-icons1").classList.add("menu-icons-hide");
       }
       function disable_menuBar() {
         document.querySelector(".menu").classList.remove("menu-visible");
+        document
+          .querySelector(".menu-icons2")
+          .classList.remove("menu-icons-visible");
+        document.querySelector(".menu-icons1").classList.add("menu-icons-visible");
       }
     </script>
   </body>
