@@ -26,7 +26,16 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap"
       rel="stylesheet"
     />
-
+    <!-- ----------------------email-------------------------------- -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("QeTIXKg2zJ_yCie-z");
+      })();
+    </script>
     <!-- --------------------aos--------------------- -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -382,10 +391,16 @@
       <div class="contact-form">
         <div class="contact-img"><img src="images/contact.jpg" alt="" /></div>
         <div class="contact-form-details">
-          <form action="https://formsubmit.co/el/sivedo" method="POST">
+          <form>
             <div class="contact-name">
               <i class="fa-solid fa-user"></i
-              ><input type="text" placeholder="Name" id="name" name="Name" />
+              ><input
+                type="text"
+                placeholder="Name"
+                id="name"
+                name="Name"
+                required
+              />
             </div>
             <div class="contact-name">
               <i class="fa-solid fa-envelope"></i
@@ -394,6 +409,7 @@
                 placeholder="Email"
                 id="email"
                 name="Email"
+                required
               />
             </div>
             <div class="contact-name">
@@ -403,6 +419,7 @@
                 placeholder="Phone"
                 id="number"
                 name="Phone"
+                required
               />
             </div>
             <div class="contact-name message-box">
@@ -412,10 +429,11 @@
                 cols="30"
                 rows="7"
                 placeholder="Message"
+                required
               ></textarea>
             </div>
             <div class="button-to-send">
-              <button class="send-message" type="submit">
+              <button class="send-message" type="submit" onclick="sendMail()">
                 Send <i class="fa-solid fa-paper-plane"></i>
               </button>
             </div>
@@ -514,30 +532,52 @@
         document.querySelector("link[rel*='icon']").href = "images/header.ico";
       };
     </script>
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      function sendEmail() {
-        Email.send({
-          Host: "smtp.gmail.com",
-          Username: "bishalyadav870@gmail.com",
-          Password: "BishalYadav@Portfolio.Neu",
-          To: "bishal.cse121045@bppimt.ac.in",
-          From: document.getElementById("email").value,
-          Subject: "Contact from Portfolio website",
-          Body:
-            "Name :" +
-            document.getElementById("name") +
-            "\n Email :" +
-            getElementById("email") +
-            "\n " +
-            "Contact Number :" +
-            document.getElementById("number") +
-            "\n " +
-            "Message :" +
-            document.getElementById("message"),
-        }).then((message) => alert(message));
+      // function sendEmail() {
+      //   Email.send({
+      //     Host: "smtp.gmail.com",
+      //     Username: "bishalyadav870@gmail.com",
+      //     Password: "BishalYadav@Portfolio.Neu",
+      //     To: "bishal.cse121045@bppimt.ac.in",
+      //     From: "bishalyadav870@gmail.com",
+      //     Subject: "Contact from Portfolio website",
+      //     Body: "hello",
+      //   }).then((message) => alert(message));
+      // }
+
+      function sendMail2() {
+        var params = {
+          from_name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("number").value,
+          message: document.getElementById("message").value,
+        };
+        emailjs
+          .send("service_yti58ue", "template_3jfwo9g", params)
+          .then(function (res) {
+            alert("Your mail sent successfully to Bishal Prasad");
+          })
+          .catch((err) => console.log(err));
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("number").value = "";
+        document.getElementById("message").value = "";
       }
-    </script> -->
+
+      function sendMail() {
+        var from_name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("number").value;
+        var message = document.getElementById("message").value;
+        if (from_name == "" || email == "" || phone == "" || message == "") {
+          alert("Please fill all the fields properly");
+        } else {
+          sendMail2();
+        }
+      }
+    </script>
 
     <!-- <script>
       // Set the scroll speed factor
