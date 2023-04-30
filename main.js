@@ -42,7 +42,7 @@ window.addEventListener("scroll", function () {
 
 window.onblur = function () {
   //change favicon
-  document.title = "Come Back";
+  document.title = "Come Back To Profile";
   document.querySelector("link[rel*='icon']").href = "images/alternative.ico";
 };
 window.onfocus = function () {
@@ -82,27 +82,26 @@ function sendMail() {
   }
 }
 
-
- new TypeIt("#text1", {
-   speed: 110,
-   loop: true,
-   waitUntilVisible: true,
- })
-   .type("Wee", { delay: 300 })
-   .move(0)
-   .delete(1)
-   .type("b")
-   .move(null, { to: "END" })
-   .type(" Development")
-   .pause(100)
-   .move(-11)
-   .type(" Application ")
-   .pause(100)
-   .move(11)
-   .pause(20)
-   .move(-23)
-   .pause(100)
-   .delete(5)
-   .pause(500)
-   .move(null, { to: "END" })
-   .go();
+new TypeIt("#text1", {
+  speed: 110,
+  loop: true,
+  waitUntilVisible: true,
+})
+  .type("Wee", { delay: 300 })
+  .move(0)
+  .delete(1)
+  .type("b")
+  .move(null, { to: "END" })
+  .type(" Development")
+  .pause(100)
+  .move(-11)
+  .type(" Application ")
+  .pause(100)
+  .move(11)
+  .pause(20)
+  .move(-23)
+  .pause(100)
+  .delete(5)
+  .pause(500)
+  .move(null, { to: "END" })
+  .go();

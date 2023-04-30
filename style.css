@@ -684,3 +684,22 @@ header {
 .activate a {
   color: inherit;
 }
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  font-family: "Suez One", serif;
+}
+.footer1{
+  color: wheat;
+}
+.footer1 ba{
+  color: white;
+  font-family: "Bakbak One", cursive;
+}
+
