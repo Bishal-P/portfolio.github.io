@@ -191,7 +191,6 @@ header {
   /* border: 1px solid black; */
 }
 
-
 .intro {
   width: 100%;
   font-family: "Suez One", serif;
@@ -247,7 +246,7 @@ header {
   animation: animate 4s steps(12) infinite;
 } */
 
-@keyframes animate {
+/* @keyframes animate {
   100% {
     width: 0%;
   }
@@ -260,7 +259,7 @@ header {
   0% {
     width: 100%;
   }
-}
+} */
 
 .buttons1 button {
   border-radius: 10px;
@@ -290,8 +289,8 @@ header {
 
 .home {
   display: flex;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 70px;
+  padding-bottom: 70px;
   background-repeat: no-repeat;
 
   /* border: 1px solid black; */
@@ -750,40 +749,6 @@ header {
   color: #000000;
   /* background-color: greenyellow; */
 }
-.activate a{
+.activate a {
   color: inherit;
-}
-
-
-.ml11 {
-  font-weight: 700;
-  font-size: 3.5em;
-}
-
-.ml11 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-}
-
-.ml11 .line {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 3px;
-  background-color: #fff;
-  transform-origin: 0 50%;
-}
-
-.ml11 .line1 { 
-  top: 0; 
-  left: 0;
-}
-
-.ml11 .letter {
-  display: inline-block;
-  line-height: 1em;
 }

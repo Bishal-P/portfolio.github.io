@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My-Portfolio-Website</title>
+    <title>Portfolio | Bishal-Prasad</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bakbak+One&family=Days+One&family=Suez+One&family=Ysabeau:wght@100;200&display=swap"
       rel="stylesheet"
@@ -29,6 +29,8 @@
 
     <!-- --------------------aos--------------------- -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="icon" type="image/x-icon" href="images/header.ico" />
   </head>
   <body>
     <header class="header-main">
@@ -120,7 +122,7 @@
         </div>
       </div>
       <div class="photo">
-        <img src="images/12.jpg" alt="" />
+        <img src="images/side_image.png" alt="" />
       </div>
     </section>
 
@@ -380,22 +382,32 @@
       <div class="contact-form">
         <div class="contact-img"><img src="images/contact.jpg" alt="" /></div>
         <div class="contact-form-details">
-          <form action="" onsubmit="sendEmail(); reset(); return false">
+          <form action="https://formsubmit.co/el/sivedo" method="POST">
             <div class="contact-name">
               <i class="fa-solid fa-user"></i
-              ><input type="text" placeholder="Name" id="name" />
+              ><input type="text" placeholder="Name" id="name" name="Name" />
             </div>
             <div class="contact-name">
               <i class="fa-solid fa-envelope"></i
-              ><input type="email" placeholder="Email" id="email" />
+              ><input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="Email"
+              />
             </div>
             <div class="contact-name">
               <i class="fa-solid fa-phone"></i
-              ><input type="text" placeholder="Phone" id="number" />
+              ><input
+                type="text"
+                placeholder="Phone"
+                id="number"
+                name="Phone"
+              />
             </div>
             <div class="contact-name message-box">
               <textarea
-                name=""
+                name="Message"
                 id="message"
                 cols="30"
                 rows="7"
@@ -403,7 +415,7 @@
               ></textarea>
             </div>
             <div class="button-to-send">
-              <button class="send-message" onclick="#">
+              <button class="send-message" type="submit">
                 Send <i class="fa-solid fa-paper-plane"></i>
               </button>
             </div>
@@ -490,6 +502,17 @@
         }
         // console.log(this.scrollY);
       });
+
+      window.onblur = function () {
+        //change favicon
+        document.title = "Come Back";
+        document.querySelector("link[rel*='icon']").href =
+          "images/alternative.ico";
+      };
+      window.onfocus = function () {
+        document.title = "Portfolio | Bishal-Prasad";
+        document.querySelector("link[rel*='icon']").href = "images/header.ico";
+      };
     </script>
     <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
