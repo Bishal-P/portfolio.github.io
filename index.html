@@ -6,26 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Bishal-Prasad</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bakbak+One&family=Days+One&family=Suez+One&family=Ysabeau:wght@100;200&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bakbak+One&family=Days+One&family=Suez+One&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap"
-      rel="stylesheet"
-    />
+     <link rel="stylesheet" href="style.css" />
+    
     <!-- ----------------------email-------------------------------- -->
     <script
       type="text/javascript"
@@ -36,10 +21,14 @@
         emailjs.init("QeTIXKg2zJ_yCie-z");
       })();
     </script>
-    <!-- --------------------aos--------------------- -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <!-- --------------------favicon--------------------- -->
     <link rel="icon" type="image/x-icon" href="images/header.ico" />
+    <!-- ------------------------------------------------------------- -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bakbak+One&family=Days+One&family=Suez+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header-main">
@@ -445,163 +434,7 @@
 
     <!-- --------------------------------------------------------------------------- -->
 
-    <script></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    <script>
-      new TypeIt("#text1", {
-        speed: 110,
-        loop: true,
-        waitUntilVisible: true,
-      })
-        .type("Wee", { delay: 300 })
-        .move(0)
-        .delete(1)
-        .type("b")
-        .move(null, { to: "END" })
-        .type(" Development")
-        .pause(100)
-        .move(-11)
-        .type(" Application ")
-        .pause(100)
-        .move(11)
-        .pause(20)
-        .move(-23)
-        .pause(100)
-        .delete(5)
-        .pause(500)
-        .move(null, { to: "END" })
-        .go();
-    </script>
-
-    <script>
-      let section = document.querySelectorAll("section");
-      let lists = document.querySelectorAll(".links");
-      function activeLink(li) {
-        lists.forEach((item) => {
-          console.log(item);
-          item.classList.remove("activate");
-        });
-        li.classList.add("activate");
-        console.log(li.classList);
-      }
-      lists.forEach((item) =>
-        item.addEventListener("click", function () {
-          activeLink(this);
-        })
-      );
-
-      window.onscroll = () => {
-        section.forEach((sec) => {
-          let top = window.scrollY;
-          let offset = sec.offsetTop;
-          let height = sec.offsetHeight;
-          let id = sec.getAttribute("id");
-
-          if (top > offset && top < offset + 150) {
-            const target = document.querySelector(
-              `[href='#${id}']`
-            ).parentElement;
-            activeLink(target);
-          }
-        });
-      };
-      window.addEventListener("scroll", function () {
-        var home = document.querySelector(".home2");
-        var about = document.querySelector(".about2");
-        if (this.scrollY < 570) {
-          home.classList.add("activate");
-          about.classList.remove("activate");
-        } else {
-          home.classList.remove("activate");
-        }
-        // console.log(this.scrollY);
-      });
-
-      window.onblur = function () {
-        //change favicon
-        document.title = "Come Back";
-        document.querySelector("link[rel*='icon']").href =
-          "images/alternative.ico";
-      };
-      window.onfocus = function () {
-        document.title = "Portfolio | Bishal-Prasad";
-        document.querySelector("link[rel*='icon']").href = "images/header.ico";
-      };
-    </script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      // function sendEmail() {
-      //   Email.send({
-      //     Host: "smtp.gmail.com",
-      //     Username: "bishalyadav870@gmail.com",
-      //     Password: "BishalYadav@Portfolio.Neu",
-      //     To: "bishal.cse121045@bppimt.ac.in",
-      //     From: "bishalyadav870@gmail.com",
-      //     Subject: "Contact from Portfolio website",
-      //     Body: "hello",
-      //   }).then((message) => alert(message));
-      // }
-
-      function sendMail2() {
-        var params = {
-          from_name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          phone: document.getElementById("number").value,
-          message: document.getElementById("message").value,
-        };
-        emailjs
-          .send("service_yti58ue", "template_3jfwo9g", params)
-          .then(function (res) {
-            alert("Your mail sent successfully to Bishal Prasad");
-          })
-          .catch((err) => console.log(err));
-
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("number").value = "";
-        document.getElementById("message").value = "";
-      }
-
-      function sendMail() {
-        var from_name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("number").value;
-        var message = document.getElementById("message").value;
-        if (from_name == "" || email == "" || phone == "" || message == "") {
-          alert("Please fill all the fields properly");
-        } else {
-          sendMail2();
-        }
-      }
-    </script>
-
-    <!-- <script>
-      // Set the scroll speed factor
-      let scrollSpeed = 6.1;
-
-      // Add an event listener for the 'wheel' event
-      document.addEventListener(
-        "wheel",
-        function (event) {
-          // Prevent default scrolling behavior
-          event.preventDefault();
-
-          // Calculate the new scroll position
-          let delta = event.deltaY;
-          let scrollPosition = window.scrollY + delta * scrollSpeed;
-
-          // Set the new scroll position
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: "smooth",
-          });
-        },
-        { passive: false }
-      );
-    </script> -->
+    <script src="main.js"></script>
   </body>
 </html>
